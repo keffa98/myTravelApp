@@ -1,0 +1,42 @@
+<ion-header>
+  <ion-navbar>
+    <ion-title>Travels</ion-title>
+    <ion-buttons start>
+      <button ion-button icon-only (click)="onToggleMenu()">
+        <ion-icon name="menu"></ion-icon>
+      </button>
+    </ion-buttons>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding>
+
+  <ion-list ion-item *ngFor="let travel of travelList; let  i = index">
+  <ion-card>
+    <ion-card-header>{{ travel.name}}</ion-card-header>
+    <ion-card-content>
+      <button (click)="onLoadTravel(i)">
+        <p>Click here for more details on {{ travel.name}} travel</p>
+<!--
+        <p>State : {{travel.isDone}}</p>
+-->
+        <ion-icon name="power" [color]="travel.isDone ? 'secondary' : 'danger'"></ion-icon>
+      </button>
+    </ion-card-content>
+<!--    <ion-grid>
+      <ion-row>
+        <ion-col>
+          <button ion-button full color="secondary">Start</button>
+        </ion-col>
+        <ion-col>
+          <button ion-button full color="danger">Done</button>
+        </ion-col>
+      </ion-row>
+    </ion-grid>-->
+  </ion-card>
+  </ion-list>
+
+</ion-content>
+
+<ion-footer padding>
+</ion-footer>

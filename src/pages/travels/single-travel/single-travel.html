@@ -1,0 +1,50 @@
+<!--
+  Generated template for the SingleTravelPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+  <ion-navbar>
+    <ion-buttons>
+      <button ion-button clear (click)="dismissModal()">Close</button>
+    </ion-buttons>
+    <ion-title>{{ travel.name }}</ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding>
+  <ion-card>
+    <ion-card-header>{{ travel.name }} Billets</ion-card-header>
+    <ion-card-content>
+      <p *ngFor="let billets of travel.billets">{{ billets }}</p>
+    </ion-card-content>
+  </ion-card>
+
+  <ion-card>
+    <ion-card-header>{{ travel.name }} Hotels</ion-card-header>
+    <ion-card-content>
+      <p *ngFor="let hotels of travel.hotels">{{ hotels }}</p>
+    </ion-card-content>
+  </ion-card>
+
+  <ion-card>
+    <ion-card-header>{{ travel.name }} Activities</ion-card-header>
+    <ion-card-content>
+      <p *ngFor="let activity of travel.activity">{{ activity }}</p>
+    </ion-card-content>
+    <ion-grid>
+      <ion-row>
+        <ion-col>
+          <button
+            ion-button
+            full
+            color="blue"
+            [disabled]="!travel.isDone"
+            (click)="onToggleTravel()">Done</button>
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+  </ion-card>
+
+</ion-content>
