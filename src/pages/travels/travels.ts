@@ -10,7 +10,7 @@ import {TravelsService} from "../../services/travels.service";
 })
 export class TravelsPage{
 
-  travelList: TravelsModel[];
+  travel: TravelsModel[];
 
   constructor(private nav: NavController,
               private modalCtrl: ModalController,
@@ -18,7 +18,7 @@ export class TravelsPage{
               private menuCtrl: MenuController) {}
 
   ionViewWillEnter() {
-    this.travelList = this.travelService.travelList.slice();
+    this.travel = this.travelService.travelList.slice();
   }
  onLoadTravel(index : number) {
     //this.nav.push(SingleTravelPage, {travel: travel});
