@@ -9,7 +9,7 @@
   </ion-navbar>
 </ion-header>
 
-<ion-content padding>
+  <ion-content padding>
 
   <ion-list ion-item *ngFor="let travel of travel; let  i = index">
   <ion-card>
@@ -36,6 +36,13 @@
   </ion-card>
   </ion-list>
 
+  <ion-card>
+    <ion-card-header>Données</ion-card-header>
+    <ion-card-content>
+      <button ion-button block outline (click)="onSaveList()">Enregistrer</button>
+      <button ion-button block outline (click)="onFetchList()">Récupérer</button>
+    </ion-card-content>
+  </ion-card>
 </ion-content>
 
 <ion-footer padding>

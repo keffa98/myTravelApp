@@ -1,0 +1,41 @@
+
+<ion-header>
+  <ion-navbar>
+    <ion-buttons end>
+      <button ion-button clear (click)="dismissModal()">Close</button>
+    </ion-buttons>
+    <ion-title>new-travel-picture</ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding>
+  <form [formGroup]="travelPictureForm">
+    <ion-list>
+      <ion-item>
+        <ion-label floating>Nom</ion-label>
+        <ion-input type="text" formControlName="name"></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-label floating>Date</ion-label>
+        <ion-datetime displayFormat="D/MM/YYYY" formControlName="date"></ion-datetime>
+      </ion-item>
+      <ion-item>
+        <ion-label floating>Description</ion-label>
+        <ion-textarea formControlName="description"></ion-textarea>
+      </ion-item>
+    </ion-list>
+    <button ion-button full icon-left (click)="onOpenPositionModal()">
+      <ion-icon name="flag"></ion-icon>
+      Ajouter lieu
+    </button>
+    <ion-list *ngIf="latitude">
+      <ion-item>
+        <p>Latitude : {{ latitude.toFixed(2) }} - Longitude : {{ longitude.toFixed(2) }}</p>
+      </ion-item>
+    </ion-list>
+    <button ion-button
+            full
+            (click)="onSubmitForm()"
+            [disabled]="travelPictureForm.invalid">Enregistrer</button>
+  </form>
+</ion-content>

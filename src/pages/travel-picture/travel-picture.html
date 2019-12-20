@@ -1,0 +1,18 @@
+
+<ion-header>
+  <ion-navbar>
+    <ion-buttons end>
+      <button ion-button icon-only (click)="addTravelPicture()">
+        <ion-icon name="add"></ion-icon>
+      </button>
+    </ion-buttons>
+    <ion-title>travelPicturePage</ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding>
+  <ion-card *ngFor="let picture of travelPictureList">
+    <img src="picture.imagePath">
+    <ion-card-title>{{picture}}</ion-card-title>
+  </ion-card>
+</ion-content>

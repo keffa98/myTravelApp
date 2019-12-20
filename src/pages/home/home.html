@@ -12,8 +12,14 @@
 
 <ion-content  padding>
 <!--  <button ion-button (click)="onGoToTravels()">Travels</button>-->
-  <button id="homepage" ion-button [navPush]="travelsPage">Travels</button>
+<!--  <button id="homepage" ion-button full [navPush]="travelsPage">Travels</button>-->
 
-  <button ion-button [navPush]="settingsPage">Settings</button>
+<!--  <button ion-button full [navPush]="settingsPage">Settings</button>-->
+  <div id="homecontent">
+    <button ion-button full [navPush]="travelPicturePage">TravelPictures</button>
+
+    <button ion-button full [navPush]="coordinatePage">Maps</button>
+  </div>
+
 
 </ion-content>
